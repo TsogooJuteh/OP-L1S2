@@ -19,6 +19,15 @@ function gcdx_(a::T, b::T) where T
     return a, u, v 
 end
 
+function invmod_(a::Integer, M::Integer)
+    d, x, y = gcdx_(a, M)
+    if d != 1
+        return nothing
+    else
+        return mod(x, M)
+    end
+end
+
 isnegative(a::Integer) = (a < 0)
 
-println(gcdx_(3,11))
+println(invmod_(9,3))
