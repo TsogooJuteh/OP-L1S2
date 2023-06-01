@@ -1,4 +1,4 @@
-function eratosthenes(n)
+function eratosthenes(n::Integer)
     primes = fill(true, n)
     primes[1] = false
     for p in 2:n

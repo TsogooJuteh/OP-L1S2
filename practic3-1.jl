@@ -1,22 +1,13 @@
-function checkingprime(a::T) where T
+function checkingprime(a::T) where T<:Integer
     if (a == 0 || a==1)
         return false
     end
-    prime = 1
-    i=2
-    while (i<a)
-        b=mod(a,i)
-        if (b==0)
-            prime = 0
-            break
+    for d in 2:T(ceil(a/2))
+        if a % d == 0
+            return false
         end
-        i=i+1
     end
-    if (prime == 1)
-        return true
-    else 
-        return false
-    end
+    return true
 end
 
 println(checkingprime(101))
