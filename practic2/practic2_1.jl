@@ -10,4 +10,4 @@ function power(a,b)
     return result
 end
 
-println(power(7,8))
+println(power(7,7))

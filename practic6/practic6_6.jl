@@ -17,8 +17,8 @@ end
 center = Vector2D(0.0, 0.0)
 radius = 1.0
 
-p = Vector2D(0.5, 0.5)  # inside the circle
+p = Vector2D(0.5, 0.5)
 println("p is inside the circle: ", point_in_circle(p, center, radius))
 
-p = Vector2D(2.0, 2.0)  # outside the circle
+p = Vector2D(2.0, 2.0)
 println("p is inside the circle: ", point_in_circle(p, center, radius))

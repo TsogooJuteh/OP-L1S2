@@ -57,3 +57,7 @@ println("-x = ", -x)
 println("x * y = ", x * y)
 println("x ^ 2 = ", x ^ 2)
 println("inv(x) = ", inv(x))
+
+#show function specifies how to display Residue
+#Residue{T,M}(a) constructor which is taking the residue of 'a' modulo  'M'  using the mod function
+#And when it does the operations like +,- it does the operation and then doing the module on 'M'

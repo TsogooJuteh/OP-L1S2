@@ -1,3 +1,10 @@
+function gcd(a::T, b::T) where T
+    while !iszero(b)
+        a,b=b,rem(a%b)
+    end
+    return abs(a)
+end
+
 function remdiv(a::T,b::T) where T
     r = rem(a,b)
     k = div(a,b)
@@ -19,15 +26,24 @@ function gcdx_(a::T, b::T) where T
     return a, u, v 
 end
 
-function invmod_(a::Integer, M::Integer)
-    d, x, y = gcdx_(a, M)
-    if d != 1
-        return nothing
+isnegative(a::Integer) = (a < 0)
+
+function diophant_solve(a::T,b::T,c::T) where T
+    d, x, y = gcdx_(a::T, b::T)
+    if (c % d != 0)
+        return false
     else
-        return mod(x, M)
+        e = c / d
+        x = x * e
+        y = y * e
+        return x, y
     end
 end
 
+println(gcdx_(3,4))
+
 isnegative(a::Integer) = (a < 0)
 
-println(invmod_(9,3))
+println(diophant_solve(3,4,11))
+
+#a*x + b*y = c, here we are finding x and y

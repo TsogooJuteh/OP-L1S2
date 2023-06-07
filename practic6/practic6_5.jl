@@ -15,7 +15,6 @@ function point_in_polygon(p::Vector2D, polygon::Array{Vector2D, 1})
         p1 = polygon[i]
         p2 = polygon[mod1(i+1, n)]
         
-        # Check if point lies on the vertex
         if p1 == p || p2 == p
             return true
         end
@@ -29,8 +28,8 @@ end
 
 polygon = [Vector2D(0.0, 0.0), Vector2D(2.0, 0.0), Vector2D(1.0, 2.0)]
 
-p = Vector2D(1.0, 1.0)  # inside the polygon
+p = Vector2D(1.0, 1.0)
 println("p is inside the polygon: ", point_in_polygon(p, polygon))
 
-p = Vector2D(2.0, 2.0)  # outside the polygon
+p = Vector2D(2.0, 2.0)
 println("p is inside the polygon: ", point_in_polygon(p, polygon))

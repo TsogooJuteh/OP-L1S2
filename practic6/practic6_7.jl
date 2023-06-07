@@ -11,7 +11,7 @@ end
 function is_convex(polygon::Array{Vector2D, 1})
     n = length(polygon)
     if n < 3
-        return false  # not a polygon
+        return false #not a polygon
     end
 
     sign = 0
@@ -29,12 +29,12 @@ function is_convex(polygon::Array{Vector2D, 1})
             if sign == 0
                 sign = cross
             elseif sign * cross < 0
-                return false  # polygon is not convex
+                return false #polygon is not convex
             end
         end
     end
 
-    return true  # polygon is convex
+    return true #is convex
 end
 
 polygon = [Vector2D(0.0, 0.0), Vector2D(2.0, 0.0), Vector2D(1.0, 2.0)]

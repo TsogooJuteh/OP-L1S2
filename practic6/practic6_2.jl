@@ -9,12 +9,15 @@ struct Segment2D
 end
 
 function signed_distance(p::Vector2D, s::Segment2D)
+    #vector to the line
     dx = s.p2.x - s.p1.x
     dy = s.p2.y - s.p1.y
     normal = Vector2D(-dy, dx)
     
+    #vector from p1 to p
     v = Vector2D(p.x - s.p1.x, p.y - s.p1.y)
     
+    #dot of v and vector(line)
     dot_product = v.x*normal.x + v.y*normal.y
     
     return dot_product

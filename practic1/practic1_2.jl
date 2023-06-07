@@ -19,6 +19,10 @@ function gcdx_(a::T, b::T) where T
     return a, u, v 
 end
 
+#gcd(return a) = a * u + b * v  gcd - Наибольший делитель
+
 isnegative(a::Integer) = (a < 0)
 
 println(gcdx_(3,11))
+
+#from here, we are finding that u and v are the coefficients that satisfy Bézout's identity.

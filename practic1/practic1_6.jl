@@ -24,3 +24,5 @@ println("p3 = ", p3)
 
 p4 = Polynomial([])
 println("p4 = ", p4)
+
+#It outputs the number type then numbers

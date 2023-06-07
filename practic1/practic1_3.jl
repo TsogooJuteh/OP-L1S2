@@ -1,10 +1,3 @@
-function gcd(a::T, b::T) where T
-    while !iszero(b)
-        a,b=b,rem(a%b)
-    end
-    return abs(a)
-end
-
 function remdiv(a::T,b::T) where T
     r = rem(a,b)
     k = div(a,b)
@@ -26,18 +19,17 @@ function gcdx_(a::T, b::T) where T
     return a, u, v 
 end
 
-function diophant_solve(a::T,b::T,c::T) where T
-    d, x, y = gcdx_(a::T, b::T)
-    if (c % d != 0)
-        return false
+function invmod_(a::Integer, M::Integer)
+    d, x, y = gcdx_(a, M)
+    if d != 1
+        return nothing #when modular no exists
     else
-        e = c / d
-        x = x * e
-        y = y * e
-        return x, y
+        return mod(x, M)
     end
 end
 
 isnegative(a::Integer) = (a < 0)
 
-println(diophant_solve(3,6,9))
+println(invmod_(14,11))
+
+#if d != 1 there a and M are no coprime, else they are coprime(1 = a*x + M*y)

@@ -17,7 +17,7 @@ function segment_intersection(s1::Segment2D, s2::Segment2D)
     denom = (y4 - y3) * (x2 - x1) - (x4 - x3) * (y2 - y1)
     
     if denom == 0
-        return nothing  # lines are parallel or coincident
+        return nothing #parallel
     end
 
     ua = ((x4 - x3) * (y1 - y3) - (y4 - y3) * (x1 - x3)) / denom
@@ -28,7 +28,7 @@ function segment_intersection(s1::Segment2D, s2::Segment2D)
         y = y1 + ua * (y2 - y1)
         return Vector2D(x, y)
     else
-        return nothing  # segments do not intersect
+        return nothing #not intersect
     end
 end
 

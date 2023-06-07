@@ -11,7 +11,7 @@ end
 function polygon_area_triangle_method(polygon::Array{Vector2D, 1})
     n = length(polygon)
     if n < 3
-        return 0  # not a polygon
+        return 0 #not a polygon
     end
 
     area = 0.0

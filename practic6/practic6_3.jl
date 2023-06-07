@@ -9,6 +9,7 @@ struct Segment2D
 end
 
 function F(x, y)
+    #curve equation
     return y - x^2
 end
 
