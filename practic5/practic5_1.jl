@@ -49,9 +49,11 @@ println(v)
 
 v = [4, 2, 3, 1]
 perm = insertion_sortperm(v)
-println(perm)
+sorted_v = v[perm]
+println(sorted_v)
 
 v = [4, 2, 3, 1]
 perm = collect(1:length(v))
 insertion_sortperm!(perm, v)
+perm = v[perm]
 println(perm)

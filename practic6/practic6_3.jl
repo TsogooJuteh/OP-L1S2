@@ -17,7 +17,7 @@ function same_side_curve(p1::Vector2D, p2::Vector2D)
     val1 = F(p1.x, p1.y)
     val2 = F(p2.x, p2.y)
     
-    return val1 * val2 >= 0
+    return val1 * val2 <= 0
 end
 
 p1 = Vector2D(1.0, 2.0)
